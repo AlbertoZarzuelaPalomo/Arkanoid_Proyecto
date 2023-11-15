@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class SizeIncreasePowerUp : MonoBehaviour
 {
-    public GameObject paddle;
 
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Tengo el potenciador");
+
+        transform.localScale = new Vector3(transform.localScale.x * 2, transform.localScale.y, transform.localScale.z);
 
     }
 
@@ -22,7 +24,9 @@ public class SizeIncreasePowerUp : MonoBehaviour
     {
         if (collision.CompareTag("Paddle"))
         {
-
+            
         }
     }*/
+
+
 }

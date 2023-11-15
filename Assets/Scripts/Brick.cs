@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class Brick : MonoBehaviour
 {
+    public GameObject paddle;
     public Rigidbody2D ballRB;
+
+    [SerializeField] GameManager gameManager;
+
+    public SizeIncreasePowerUp potenciador;
     
     SpriteRenderer spriteRenderer;
     [SerializeField] int lifes;
+    [SerializeField] int puntos;
     [SerializeField] bool hasPowerUp;
-    [SerializeField] GameObject[] powerUps;
+    
     float speeding = 1.05f;
 
 
@@ -56,12 +62,11 @@ public class Brick : MonoBehaviour
 
         if (lifes <= 0)
         {
-            if (hasPowerUp)
-            {
-                Instantiate(powerUps[Random.Range(0, 2)]);
-            }
-
             ballRB.velocity *= speeding;
+
+            gameManager.SumarPuntos(puntos);
+
+            paddle.gameObject.AddComponent<SizeIncreasePowerUp>();
 
             Destroy(gameObject);
         }

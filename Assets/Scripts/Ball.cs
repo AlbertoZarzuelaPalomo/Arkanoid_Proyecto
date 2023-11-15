@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-
+    [SerializeField] GameManager gameManager;
     private Rigidbody2D rb2D;
     Vector2 dir = new Vector2(1, 1);
     [SerializeField] int startSpeed;
@@ -18,6 +18,8 @@ public class Ball : MonoBehaviour
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
+
+
     }
 
     // Update is called once per frame
@@ -93,10 +95,10 @@ public class Ball : MonoBehaviour
     void Muerte()
     {
         transform.SetParent(paddle.transform);
+        isMoving = false;
         rb2D.velocity = new Vector2(0, 0);
         transform.localPosition = new Vector2(0, 1.2f);
-        isMoving = false;
-
+        gameManager.QuitarVida();
     }
 
     void Empujon() //Para cuando la bola se queda "pillada" en un eje
