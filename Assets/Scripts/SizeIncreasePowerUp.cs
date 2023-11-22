@@ -2,31 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SizeIncreasePowerUp : MonoBehaviour
+public class SizeIncreasePowerUp : PowerUp
 {
 
     // Start is called before the first frame update
-    void Start()
+    public override void Aplicar()
     {
-        Debug.Log("Tengo el potenciador");
 
-        transform.localScale = new Vector3(transform.localScale.x * 2, transform.localScale.y, transform.localScale.z);
+        GameObject paddle = GameObject.FindGameObjectWithTag("Paddle");
+
+        paddle.transform.localScale = new Vector3(2.8f, transform.localScale.y, transform.localScale.z);
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    /*private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Paddle"))
-        {
-            
-        }
-    }*/
 
 
 }

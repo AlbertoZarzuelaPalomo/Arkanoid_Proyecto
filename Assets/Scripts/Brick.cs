@@ -9,6 +9,9 @@ public class Brick : MonoBehaviour
 
     [SerializeField] GameManager gameManager;
 
+    public PowerUp Potenciador;
+    public GameObject MiPotenciador;
+
     public SizeIncreasePowerUp potenciador;
     
     SpriteRenderer spriteRenderer;
@@ -47,7 +50,7 @@ public class Brick : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        lifes -= 1;
+        lifes--;
 
         switch (lifes)
         {
@@ -66,7 +69,12 @@ public class Brick : MonoBehaviour
 
             gameManager.SumarPuntos(puntos);
 
-            paddle.gameObject.AddComponent<SizeIncreasePowerUp>();
+            //paddle.gameObject.AddComponent<SizeIncreasePowerUp>();
+
+            if (Potenciador != null)
+            {
+                Potenciador.Aplicar();
+            }
 
             Destroy(gameObject);
         }
