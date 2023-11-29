@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
             var ladrilloScript = ladrillo.GetComponent<Brick>();
 
             var miGameObject = new GameObject();
-            miGameObject.AddComponent<SizeIncreasePowerUp>();
+            miGameObject.AddComponent<DoubleBall>();
             ladrilloScript.MiPotenciador = miGameObject;
                 
             

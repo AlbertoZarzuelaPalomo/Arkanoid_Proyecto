@@ -6,11 +6,14 @@ TagManager:
   tags:
   - DeathZone
   - Paddle
+  - Brick
+  - GameManager
+  - Ball
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ball
   - Water
   - UI
   - 

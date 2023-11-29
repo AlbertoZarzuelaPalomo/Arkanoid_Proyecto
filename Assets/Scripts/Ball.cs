@@ -11,6 +11,7 @@ public class Ball : MonoBehaviour
     
     bool isMoving = false;
     public int angleMultiplier;
+    
 
     public GameObject paddle;
 

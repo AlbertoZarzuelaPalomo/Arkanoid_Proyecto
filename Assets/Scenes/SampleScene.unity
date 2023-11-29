@@ -269,9 +269,9 @@ GameObject:
   - component: {fileID: 200485763}
   - component: {fileID: 200485762}
   - component: {fileID: 200485765}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -326,7 +326,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: 507752e27fa4ca04ea5ab6bc6c45b452, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!212 &200485764
 SpriteRenderer:
@@ -411,7 +411,7 @@ GameObject:
   - component: {fileID: 332320459}
   m_Layer: 0
   m_Name: Medium_Brick
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -431,10 +431,9 @@ MonoBehaviour:
   paddle: {fileID: 803261619}
   ballRB: {fileID: 200485763}
   gameManager: {fileID: 1813990412}
-  potenciador: {fileID: 1178214322}
+  MiPotenciador: {fileID: 0}
   lifes: 2
   puntos: 20
-  hasPowerUp: 0
 --- !u!61 &332320460
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -873,7 +872,7 @@ GameObject:
   - component: {fileID: 664077186}
   m_Layer: 0
   m_Name: Hard_Brick
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -893,10 +892,9 @@ MonoBehaviour:
   paddle: {fileID: 803261619}
   ballRB: {fileID: 200485763}
   gameManager: {fileID: 1813990412}
-  potenciador: {fileID: 1178214322}
+  MiPotenciador: {fileID: 0}
   lifes: 3
   puntos: 30
-  hasPowerUp: 0
 --- !u!61 &664077187
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1077,7 +1075,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: 507752e27fa4ca04ea5ab6bc6c45b452, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!212 &803261622
 SpriteRenderer:
@@ -1187,7 +1185,7 @@ GameObject:
   - component: {fileID: 912641215}
   m_Layer: 0
   m_Name: Normal_Brick
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1207,10 +1205,9 @@ MonoBehaviour:
   paddle: {fileID: 803261619}
   ballRB: {fileID: 200485763}
   gameManager: {fileID: 1813990412}
-  potenciador: {fileID: 1178214322}
+  MiPotenciador: {fileID: 0}
   lifes: 1
   puntos: 10
-  hasPowerUp: 0
 --- !u!61 &912641216
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1703,7 +1700,7 @@ GameObject:
   - component: {fileID: 1733551403}
   m_Layer: 0
   m_Name: Power_Brick
-  m_TagString: Untagged
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1723,10 +1720,9 @@ MonoBehaviour:
   paddle: {fileID: 803261619}
   ballRB: {fileID: 200485763}
   gameManager: {fileID: 1813990412}
-  potenciador: {fileID: 1178214322}
+  MiPotenciador: {fileID: 0}
   lifes: 1
   puntos: 10
-  hasPowerUp: 0
 --- !u!61 &1733551404
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1853,7 +1849,7 @@ GameObject:
   - component: {fileID: 1813990412}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1871,6 +1867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vidas: 3
+  potenciadoresDisponibles: []
 --- !u!4 &1813990413
 Transform:
   m_ObjectHideFlags: 0

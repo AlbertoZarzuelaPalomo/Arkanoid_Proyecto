@@ -9,15 +9,14 @@ public class Brick : MonoBehaviour
 
     [SerializeField] GameManager gameManager;
 
-    public PowerUp Potenciador;
+    
     public GameObject MiPotenciador;
 
-    public SizeIncreasePowerUp potenciador;
     
     SpriteRenderer spriteRenderer;
     [SerializeField] int lifes;
     [SerializeField] int puntos;
-    [SerializeField] bool hasPowerUp;
+    
     
     float speeding = 1.05f;
 
@@ -71,9 +70,11 @@ public class Brick : MonoBehaviour
 
             //paddle.gameObject.AddComponent<SizeIncreasePowerUp>();
 
-            if (Potenciador != null)
+            if (MiPotenciador != null)
             {
-                Potenciador.Aplicar();
+
+                MiPotenciador.GetComponent<PowerUp>().Aplicar();
+
             }
 
             Destroy(gameObject);
